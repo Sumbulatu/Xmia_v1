@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+    <h2>{{ car.car_make }} {{ car.car_brand }} Detail</h2>
+    <p>Type: {{ car.car_type }}</p>
+    <p>Year: {{ car.car_year }}</p>
+    <p>Seller Phone: {{ car.caronsale.seller_phone }}</p>
+    <p>Seller Location: {{ car.caronsale.seller_location }}</p>
+    <p>Postal Code: {{ car.caronsale.postal_code }}</p>
+
+    <!-- Display images associated with the car -->
+    <h3>Car Images</h3>
+    <ul>
+      {% for image in car.car_images.all %}
+        <li><img src="{{ image.image.url }}" alt="Car Image"></li>
+      {% endfor %}
+    </ul>
+
+{% endblock %}
+</body>
+

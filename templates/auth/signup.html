@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body class="form-body">
+
+    <div class="form-container-signup">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="success-message">
+                        {{ message }}
+                    </div>
+                {% elif message.tags == 'error' %}
+                    <div class="error-message">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <h1>Signup</h1>
+        <form action="signup" id="signupForm" method="POST" onsubmit="handleSignupForm(event)">{% csrf_token %}
+            <div class="input-cnt">
+                <i class="material-icons">person</i>
+                <input type="text" placeholder="Username" name="username" required/>
+            </div>
+
+            <div class="input-cnt">
+                <i class="material-icons">lock</i>
+                <input type="password" placeholder="Password" name="password" required/>
+            </div>
+            <div class="input-cnt">
+                <i class="material-icons">lock</i>
+                <input type="password" placeholder="Confirm Password" name="confirm_password" required/>
+            </div>
+            <div class="input-cnt">
+                <input type="submit" value="Signup" />
+            </div>
+        </form>
+        <div class="reset">
+            <h4>Already Register?</h4>
+            <a href="login"><b>Login</b></a><br/>
+        </div>
+    </div>
+</body>
+</html>

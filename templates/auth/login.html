@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+
+</head>
+<body class="form-body">
+    <div class="form-container">
+        <div class="error-message">
+            {{ message }}
+        </div>
+        <h1>Login</h1>
+        <form action="{% url 'login' %}" id="loginForm" method="POST" >{% csrf_token %}
+            <div class="input-cnt">
+                <i class="material-icons">person</i>
+                <input type="text" placeholder="Email or username" name="username" required/>
+            </div>
+            <div class="input-cnt">
+                <i class="material-icons">lock</i>
+                <input type="password" placeholder="Password" name="password" required/>
+            </div>
+            <div class="input-cnt">
+                <input type="submit" value="Login" />
+            </div>
+
+        </form>
+        <div class="reset">
+            <h4>Forgot Password?<a href="reset_password"><b> Reset</b></a><br/></h4>
+            <h4>Not register?<a href="signup"><b> Signup</b></a></h4>
+        </div>
+        <div class="signup">
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+

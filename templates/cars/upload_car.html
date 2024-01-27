@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- Add custom styles for centering -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        /* Apply your custom styles to form fields */
+        .container form input,
+        .container form select,
+        .container form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .container form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Car</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="car_detail">
+                {{ car_form.as_p }}
+            </div>
+            <div class="sell_detail">
+                {{ car_on_sale_form.as_p }}
+            </div>
+            <div class="img_detail">
+                {{ car_image_form.as_p }}
+            </div>
+
+            <button type="submit">Upload Car</button>
+        </form>
+    </div>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
+{% endblock %}

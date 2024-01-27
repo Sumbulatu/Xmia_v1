@@ -1,0 +1,158 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    <div class="navbar ">
+        <a href="/"><img src="{% static 'assets/images/logo.svg' %}" alt="logo"></a>
+        <ul>
+            <li><a href="/"><span class="material-icons">home</span> Home</a></li>
+            <li><a href="auth/login"><span class="material-icons">login</span> Login</a></li>
+            <li><a href="auth/signup"><span class="material-icons">add</span> Signup</a></li>
+            <li><a href="support"><span class="material-icons">support</span> Support</a></li>
+        </ul>
+    </div>
+     <div class="background-container">
+        <h1>WELLCOME TO XMIA</h1>
+         {{ message }}
+    </div>
+<div class="top-container">
+    <span>
+        <h2>Supermarket</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can shop on your favorite supermarkets
+        </marquee>
+        <button class="smk">Shop</button>
+    </span>
+    <span>
+        <h2>Cars</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can buy or sell your car tukumbo or used
+        </marquee>
+        <button class="cars">Shop</button>
+    </span>
+    <span>
+        <h2>Materials</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            buy your materials and equipments and tools
+        </marquee>
+        <button class="mtr">Shop</button>
+
+    </span>
+    <span>
+        <h2>Services</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            looking for workers or want to be a worker
+        </marquee>
+        <button class="svc">Visits</button>
+
+    </span>
+
+
+    <script src="{% static '/assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Wait for the DOM content to be loaded
+
+            // Select all buttons with the correct classes
+            var shopButtons = document.querySelectorAll('.smk, .cars, .mtr, .svc');
+
+            // Add a click event listener to each button
+            shopButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Show an alert when any button is clicked
+                    alert('Login to continue');
+                });
+            });
+        });
+    </script>
+</div>
+
+<footer id="footer">
+    <!-- ... (Footer content remains unchanged) ... -->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Mia Sufee</h3>
+            <p>
+              prince and princess junction<br>
+               katukoma plaza <br>
+              FCT abuja, 900104<br>
+              Nigeria <br><br>
+              <strong>Phone:</strong> +2348061708401<br>
+              <strong>Email:</strong> miasufee001@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/home">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/servise">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">delivery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">advertisement</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>to get update on our services</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mia Sufee</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+
+          Designed by <a href="#">Mia</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+</html>
+{% endblock %}

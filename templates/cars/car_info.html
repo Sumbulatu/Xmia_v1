@@ -1,0 +1,11 @@
+{% for seller_data in all_cars %}
+  <h2>{{ seller_data.seller.state }}</h2>
+  {% for car_data in seller_data.cars %}
+    <h3>{{ car_data.car.car_make }}</h3>
+    <p>Car Year: {{ car_data.car.car_year }}</p>
+    <!-- Display other car details and images here -->
+    {% for car_image in car_data.car_images %}
+      <img src="{{ car_image.image.url }}" alt="Car Image">
+    {% endfor %}
+  {% endfor %}
+{% endfor %}

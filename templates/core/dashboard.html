@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    <div class="navbar ">
+        <a href="/"><img src="{% static 'assets/images/logo.svg' %}" alt="logo"></a>
+        <ul>
+           <li class="search-bar">
+            <form action="/search/" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit"><span class="material-icons">search</span></button>
+            </form>
+            </li>
+            <li><a href="/"><span class="material-icons">home</span> Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="#"><span class="material-icons">account_circle</span> {{ user.username }}</a></li>
+            {% else %}
+                <li><a href="#"><span class="material-icons">account_circle</span> Profile</a></li>
+            {% endif %}
+            <li><a href="#"><span class="material-icons">help</span> Help</a></li>
+            <li><a href="/"><span class="material-icons">exit_to_app</span> Logout</a></li>
+            <li><a href="#"><span class="material-icons">business</span> My Business</a></li>
+        </ul>
+    </div>
+
+     <div class="background-container">
+        <h1>WELLCOME TO XMIA</h1>
+    </div>
+<div class="top-container">
+    <span>
+        <h2>Supermarket</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can shop on your favorite supermarkets
+        </marquee>
+        <a href="/shop/"><button class="smk">Shop</button></a>
+    </span>
+    <span>
+        <h2>Cars</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can shop on your favorite supermarkets
+        </marquee>
+        <a href="/cars"><button class="cars">Shop</button></a>
+    </span>
+    <span>
+        <h2>Materials</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can shop on your favorite supermarkets
+        </marquee>
+        <a href="/materials/"><button class="mtr">Shop</button></a>
+
+    </span>
+    <span>
+        <h2>Services</h2>
+        <marquee behavior="scroll" direction="up" scrollamount="1">
+            you can shop on your favorite supermarkets
+        </marquee>
+        <a href="services/"><button class="svc">Visits</button></a>
+
+    </span>
+
+
+    <script src="{% static '/assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+<!---->
+</div>
+</body>
+</html>
+{% endblock %}
